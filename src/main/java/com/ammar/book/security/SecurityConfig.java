@@ -41,7 +41,8 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/webjars/**",
                                 "/swagger-ui.html"
-                        ).permitAll().anyRequest().authenticated()).sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
+                        ).permitAll().anyRequest().authenticated())
+                .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider).addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
