@@ -9,8 +9,6 @@ import com.ammar.book.user.TokenRepository;
 import com.ammar.book.user.User;
 import com.ammar.book.user.UserRepository;
 import jakarta.mail.MessagingException;
-import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
