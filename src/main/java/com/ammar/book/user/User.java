@@ -1,5 +1,7 @@
 package com.ammar.book.user;
 
+import com.ammar.book.book.Book;
+import com.ammar.book.history.BookTransactionHistory;
 import com.ammar.book.role.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -41,6 +43,13 @@ public class User implements UserDetails, Principal {
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<BookTransactionHistory> histories;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
